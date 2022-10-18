@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class promotion extends Model
 {
-    use HasFactory;
-
+    
+    
     public function apprenants(){
-        $this->hasMany(Apprenant::class);
+        return $this->hasMany(apprenant::class, 'id');
     }
 }

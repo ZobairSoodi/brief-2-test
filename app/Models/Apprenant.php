@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apprenant extends Model
 {
-    use HasFactory;
+    
+
+    public function promotion(){
+        return $this->belongsTo(promotion::class, 'promo_id', 'id');
+    }
 }

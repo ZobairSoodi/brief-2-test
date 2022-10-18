@@ -24,7 +24,7 @@
             <tbody>
             @foreach ($data as $row)
                 <tr>
-                    <td> {{ $row->nom }} </td>
+                    <td> <a href="/promotions/{{ $row->id }}/apprenants">{{ $row->nom }}</a> </td>
                     <td>
                         <a href="{{ route('edit-promotion') }}?id={{ $row->id }}">Edit</a> 
                         <a href="{{ route('delete-promotion') }}?id={{ $row->id }}">Delete</a>

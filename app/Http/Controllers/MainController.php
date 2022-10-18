@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apprenant;
 use Illuminate\Http\Request;
 use App\Models\promotion;
 
@@ -43,8 +44,16 @@ class MainController extends Controller
     }
 
     public function show_appr_by_prom($id){
-        $prom = promotion::find($id);
-        $appr = promotion::find($id)->apprenants();
-        return view('appr_by_prom', compact('data'));
+        // $prom = promotion::where('id', $id)->first();
+        $appr = Apprenant::select(
+            'promotions.id as id_prom', 
+            'apprenants.id as id_apppr', 
+            'promotions.nom as nom_prom', 
+            'apprenants.nom as nom_appr'
+        )
+        ->rightJoin('promotions', 'promotions.id', '=', 'apprenants.promo_id')
+        ->where('promotions.id', $id)
+        ->get();
+        return view('appr_by_prom', compact('appr'));
     }
 }

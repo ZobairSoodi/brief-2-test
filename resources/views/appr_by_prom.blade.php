@@ -8,9 +8,10 @@
 </head>
 
 <body>
+    <h1>{{ $appr[0]->nom_prom }}</h1>
     <div>
-        @foreach ($data as $row)
-            {{ $row->nom }}
+        @foreach ($appr as $row)
+            {{ $row->nom_appr }}
         @endforeach
     </div>
 </body>
