@@ -26,16 +26,27 @@ class MainController extends Controller
         return redirect('promotions');
     }
 
-    public function edit_promotion(Request $req){
-        $data = promotion::where('id', $req->id)->first();
+    public function edit_promotion($id){
+        $data = Apprenant::select(
+            'promotions.id as id_prom',
+            'apprenants.id as id_appr',
+            'promotions.nom as nom_prom',
+            'apprenants.nom as nom_appr',
+            'apprenants.prenom',
+            'apprenants.email'
+        )
+        ->rightJoin('promotions', 'promotions.id', '=', 'apprenants.promo_id')
+        ->where('promotions.id', $id)
+        ->get();
+        // return $data;
         return view('edit_promotion', compact("data"));
     }
 
-    public function update_promotion(Request $req){
-        $promo = promotion::where('id', $req->id)->first();
+    public function update_promotion($id, Request $req){
+        $promo = promotion::where('id', $id)->first();
         $promo->nom = $req->nom;
         $promo->save();
-        return redirect('promotions');
+        return redirect("promotion/$id/edit");
     }
 
     public function delete_promotion(Request $req){
