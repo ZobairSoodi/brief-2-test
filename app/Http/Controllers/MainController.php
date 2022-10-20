@@ -46,9 +46,9 @@ class MainController extends Controller
     public function show_appr_by_prom($id){
         // $prom = promotion::where('id', $id)->first();
         $appr = Apprenant::select(
-            'promotions.id as id_prom', 
-            'apprenants.id as id_apppr', 
-            'promotions.nom as nom_prom', 
+            'promotions.id as id_prom',
+            'apprenants.id as id_apppr',
+            'promotions.nom as nom_prom',
             'apprenants.nom as nom_appr'
         )
         ->rightJoin('promotions', 'promotions.id', '=', 'apprenants.promo_id')
