@@ -11,8 +11,9 @@
 
 <body>
     <div class="cont">
+        <h1>Edit Promotion</h1>
         <div>
-            <h1>Edit Promotion</h1>
+            
             <form action="{{ route('update-promotion', ['id' => $data[0]->id_prom]) }}" method="POST">
                 {{ csrf_field() }}
                 <label>Nom: <input type="text" name="nom" value="{{ $data[0]->nom_prom }}"></label>
@@ -20,8 +21,9 @@
                 <input type="submit" name="edit_promotion">
             </form>
         </div>
+        <h3>Apprenants:</h3>
         <div>
-            <h3>Apprenants:</h3>
+            
             <div>
                 <button id="add_appr">Ajouter Apprenant</button>
             </div>

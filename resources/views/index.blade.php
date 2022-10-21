@@ -18,6 +18,7 @@
         <h1>Promotions:</h1>
         <div>
             <a href="{{ route('insert-promotion') }}">Ajouter Promotion</a>
+            <input id="search_prom" type="text" placeholder="rechercher">
         </div>
 
         <table>
@@ -25,7 +26,7 @@
                 <th>Nom</th>
                 <th>Action</th>
             </thead>
-            <tbody>
+            <tbody id="search_table">
                 @foreach ($data as $row)
                     <tr>
                         <td>{{ $row->nom }}</td>
@@ -39,6 +40,7 @@
             </tbody>
         </table>
     </div>
+    <script src="{{ URL::asset('js/index.js') }}"></script>
 </body>
 
 </html>
