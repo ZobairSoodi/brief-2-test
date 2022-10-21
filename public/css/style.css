@@ -1,0 +1,58 @@
+td {
+    padding: 5px 10px;
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#appr_form {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+    opacity: 0;
+    background-color: rgba(191, 191, 191, 0.338);
+}
+
+#appr_form>div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 30%;
+    background-color: gray;
+    padding: 40px 60px;
+    border-radius: 10px;
+}
+
+#appr_form input[type="text"] {
+    width: 70%;
+    min-height: 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+#appr_form label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(152, 0, 0);
+    cursor: pointer;
+}
