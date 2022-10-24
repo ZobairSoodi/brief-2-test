@@ -25,4 +25,16 @@ class MainController extends Controller
         $obj->save();
         return redirect('promotions');
     }
+
+    public function edit_promotion($id){
+        $promotion = promotion::where('id', $id)->first();
+        return view('edit_promotion', compact('promotion'));
+    }
+
+    public function update_promotion(Request $req){
+        $my_obj = promotion::where('id', $req->id)->first();
+        $my_obj->nom = $req->nom;
+        $my_obj->save();
+        return redirect(route('index'));
+    }
 }

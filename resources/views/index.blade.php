@@ -26,8 +26,7 @@
                 <tr>
                     <td> <a href="">{{ $row->nom }}</a> </td>
                     <td>
-                        <a href="">Edit</a> 
-                        <a href="">Delete</a>
+                        <a href="{{ route('edit-promotion', ['id'=>$row->id]) }}">Edit</a>
                     </td>
                 </tr>
             @endforeach
