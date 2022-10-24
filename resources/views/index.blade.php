@@ -24,10 +24,10 @@
             <tbody>
             @foreach ($data as $row)
                 <tr>
-                    <td> <a href="/promotions/{{ $row->id }}/apprenants">{{ $row->nom }}</a> </td>
+                    <td> <a href="">{{ $row->nom }}</a> </td>
                     <td>
-                        <a href="{{ route('edit-promotion') }}?id={{ $row->id }}">Edit</a> 
-                        <a href="{{ route('delete-promotion') }}?id={{ $row->id }}">Delete</a>
+                        <a href="">Edit</a> 
+                        <a href="">Delete</a>
                     </td>
                 </tr>
             @endforeach
