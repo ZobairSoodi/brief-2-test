@@ -37,3 +37,6 @@ Route::get('promotion/apprenants/{id_appr}/edit', [ ApprController::class, 'edit
 Route::post('promotion/apprenants/{id_appr}/edit', [ ApprController::class, 'update_appr' ])->name('update_appr');
 
 Route::get('promotion/apprenants/{id_appr}/delete', [ ApprController::class, 'delete_appr' ])->name('delete_appr');
+
+Route::get('search/{name}', [ MainController::class, 'search_prom'])->name('search');
+Route::get('search/', [ MainController::class, 'search_prom'])->name('search');

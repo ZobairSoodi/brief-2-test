@@ -40,6 +40,7 @@
             </tbody>
         </table>
     </div>
+    
     <script src="{{ URL::asset('js/index.js') }}"></script>
 </body>
 
