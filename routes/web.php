@@ -19,11 +19,3 @@ Route::get('/promotions', [ MainController::class, 'index' ])->name('index');
 Route::get('/promotions/add', [ MainController::class, 'add_promotion' ])->name('add-promotion');
 
 Route::post('/promotions/add', [ MainController:: class, 'insert_promotion' ])->name('insert-promotion');
-
-Route::get('promotion/edit', [ MainController::class, 'edit_promotion' ])->name('edit-promotion');
-
-Route::post('promotion/edit', [ MainController::class, 'update_promotion' ])->name('update-promotion');
-
-Route::get('promotion/delete', [ MainController::class, 'delete_promotion' ])->name('delete-promotion');
-
-Route::get('promotions/{id}/apprenants', [ MainController::class, 'show_appr_by_prom' ]);
