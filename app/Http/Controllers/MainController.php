@@ -76,7 +76,7 @@ class MainController extends Controller
         return view('appr_by_prom', compact('appr'));
     }
 
-    public function search_prom($name="")
+    public function search_prom($name = "")
     {
         $data = promotion::where('nom', 'like', '%' . $name . '%')->get();
         return view('search_prom', compact('data'));

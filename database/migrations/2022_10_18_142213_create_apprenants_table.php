@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('apprenants', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->unsignedBigInteger('promo_id');
+            $table->unsignedBigInteger('promo_id'); 
             $table->foreign('promo_id')->references('id')->on('promotions');
             $table->timestamps();
         });
