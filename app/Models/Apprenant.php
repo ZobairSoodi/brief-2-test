@@ -10,6 +10,6 @@ class Apprenant extends Model
     
 
     public function promotion(){
-        return $this->belongsTo(promotion::class, 'promo_id', 'id');
+        return $this->belongsTo(promotion::class, 'promo_id');
     }
 }

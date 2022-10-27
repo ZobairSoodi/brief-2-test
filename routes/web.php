@@ -41,3 +41,7 @@ Route::get('promotion/apprenants/{id_appr}/delete', [ ApprController::class, 'de
 Route::get('search/{name}', [ MainController::class, 'search_prom'])->name('search');
 
 Route::get('search/', [ MainController::class, 'search_prom'])->name('search');
+
+Route::get('search_appr/{id}/promotion/{name}', [ ApprController::class, 'search_appr'])->name('search-appr');
+
+Route::get('search_appr/{id}/promotion/', [ ApprController::class, 'search_appr'])->name('search-appr');

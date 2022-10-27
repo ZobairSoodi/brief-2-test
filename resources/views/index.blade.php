@@ -1,38 +1,34 @@
 @extends('base')
 
 @section('style-link')
-    <style>
-        td {
-            padding: 5px 10px;
-        }
-    </style>
 @endsection
 
 @section('content')
     <h1>Promotions:</h1>
     <div>
-        <a href="{{ route('insert-promotion') }}">Ajouter Promotion</a>
+        <a href="{{ route('insert-promotion') }}" id="add_prom">Ajouter Promotion</a>
         <input id="search_prom" type="text" placeholder="rechercher">
     </div>
+    <div class="table_cont" style="justify-content: center">
+        <table>
+            <thead>
+                <th>Action</th>
+                <th>Nom</th>
+            </thead>
+            <tbody id="search_table">
+                @foreach ($data as $row)
+                    <tr>
+                        <td class="actions">
+                            <a href="{{ route('edit-promotion', ['id' => $row->id]) }}">Edit</a>
+                            <a href="{{ route('delete-promotion') }}?id={{ $row->id }}">Delete</a>
+                        </td>
+                        <td>{{ $row->nom }}</td>
+                    </tr>
+                @endforeach
 
-    <table>
-        <thead>
-            <th>Nom</th>
-            <th>Action</th>
-        </thead>
-        <tbody id="search_table">
-            @foreach ($data as $row)
-                <tr>
-                    <td>{{ $row->nom }}</td>
-                    <td>
-                        <a href="{{ route('edit-promotion', ['id' => $row->id]) }}">Edit</a>
-                        <a href="{{ route('delete-promotion') }}?id={{ $row->id }}">Delete</a>
-                    </td>
-                </tr>
-            @endforeach
-
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 @endsection
 
 

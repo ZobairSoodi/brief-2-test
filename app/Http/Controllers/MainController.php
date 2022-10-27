@@ -38,9 +38,15 @@ class MainController extends Controller
             'promotions.nom as nom_prom',
             'apprenants.nom as nom_appr',
             'apprenants.prenom',
-            'apprenants.email'
+            'apprenants.email',
+            'apprenants.telephone',
+            'apprenants.CIN',
+            'apprenants.date_naissance',
+            'apprenants.parent_telephone',
+            'apprenants.address',
+            'apprenants.filiere'
         )
-            ->rightJoin('promotions', 'promotions.id', '=', 'apprenants.promo_id')
+            ->Join('promotions', 'promotions.id', '=', 'apprenants.promo_id')
             ->where('promotions.id', $id)
             ->get();
         // return $data;

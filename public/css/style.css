@@ -37,14 +37,81 @@ nav li a {
     font-size: 20px;
 }
 
+#add_prom, #add_appr{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(85, 85, 181);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+#search_prom, #search_inp{
+    padding: 10px 15px;
+}
+
+.table_cont{
+    width: 100vw;
+    display: flex;
+    overflow-x:auto;
+}
+
+table{
+    border-spacing: 0;
+    margin-top: 20px;
+    /* display: flex; */
+}
+
+table .actions{
+    display: flex;
+    justify-content: center;
+}
+table .actions a{
+    margin-right: 10px;
+}
+
+th{
+    text-align: start;
+    padding: 20px 20px;
+    font-size: 20px;
+    background-color: rgb(145, 145, 145);
+}
+
+tbody tr:nth-child(2n){
+    background-color: rgb(188, 188, 188);
+}
+tbody tr:nth-child(2n+1){
+    background-color: rgb(236, 236, 236);
+}
+
 td {
+    /* min-width: 100px; */
+    padding: 20px 20px;
+    font-size: 20px;
+}
+
+td a{
+    color: rgb(50, 50, 50);
+    text-decoration: none;
     padding: 5px 10px;
+    border-radius: 5px;
+}
+
+td a:first-child{
+    background-color: rgb(104, 137, 179);
+    color: white;
+}
+
+td a:nth-child(2){
+    background-color: rgb(174, 84, 84);
+    color: white;
 }
 
 .cont {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .cont input[type="text"] {
